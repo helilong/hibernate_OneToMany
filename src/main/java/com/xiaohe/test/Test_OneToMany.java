@@ -97,7 +97,8 @@ public class Test_OneToMany {
 			//2 把联系人放到客户里面
 			customer.getSetLinkMan().add(linkman);
 			
-			//3 保存客户
+			//3 保存客户    使用级联操作
+			//cascade="save-update,delete"：级联操作
 			session.save(customer);
 			
 			//提交事务

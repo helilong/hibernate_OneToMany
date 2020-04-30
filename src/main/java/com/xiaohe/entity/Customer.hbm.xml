@@ -7,6 +7,9 @@
 		class标签
 		name属性：实体类全路径
 		table属性：数据库表名称
+		lazy="false"   懒加载     默认：ture   及时加载(get) 和   懒 加载(load)
+		
+		
 	-->
 	<class name="com.xiaohe.entity.Customer" table="t_customer">
 		<id name="cid" column="cid">
@@ -33,6 +36,8 @@
 			<!-- 一对多建表，有外键
 				hibernate机制：双向维护外键，在一和多那一方都配置外键	
 				column属性值：外键名称
+				
+				cascade="save-update,delete"：级联操作
 			 -->
 			<key column="clid"></key>
 			<!-- 客户所有的联系人，class里面写联系人实体类全路径 -->
